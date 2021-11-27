@@ -1,103 +1,24 @@
 .button {
-  border: none;
-  border-radius: 5px;
-}
+  border: none !important;
+  border-radius: 5px !important;
+  color: white !important;
+  background-color: #5d38db !important;
+  height: 42px !important;
 
-.primary {
-  background-color: #5d38db;
-  color: #fff !important;
   &:hover {
-    background-color: #7857ea !important;
+    background-color: #7858da !important;
   }
   &:active {
-    background-color: #451dce !important;
+    background-color: #e8e1fe !important;
+  }
+  &:default {
+    background-color: #5d38db !important;
   }
   &:focus {
-    background-color: #451dce !important;
+    background-color: #7858da !important;
   }
   &:disabled {
     background-color: rgba(0, 0, 0, 0.1) !important;
     color: rgba(0, 0, 0, 0.25) !important;
   }
-}
-
-.outline {
-  border: solid 2px #5d38db;
-  color: #5d38db !important;
-  &:hover {
-    border: solid 2px #5d38db !important;
-    background-color: #f1ecff !important;
-  }
-  &:active {
-    border: solid 2px #5d38db !important;
-    background-color: #e8e1fe !important;
-  }
-  &:focus {
-    border: solid 2px #5d38db !important;
-    background-color: #e8e1fe !important;
-  }
-  &:disabled {
-    border: solid 2px rgba(0, 0, 0, 0.1) !important;
-    color: rgba(0, 0, 0, 0.25) !important;
-  }
-}
-
-.secondary {
-  border: none;
-  box-shadow: none;
-  background-color: #f0eef6;
-  color: #5d38db !important;
-  &:hover {
-    background-color: #eee9ff !important;
-  }
-  &:active {
-    background-color: #e8e1fe !important;
-  }
-  &:focus {
-    background-color: #e8e1fe !important;
-  }
-  &:disabled {
-    background-color: rgba(0, 0, 0, 0.1) !important;
-    color: rgba(0, 0, 0, 0.25) !important;
-  }
-}
-
-.ghost {
-  border: none;
-  box-shadow: none;
-  background-color: #ffffff;
-  color: #5d38db !important;
-  &:hover {
-    background-color: #f0eef6 !important;
-  }
-  &:active {
-    background-color: #e8e1fe !important;
-  }
-  &:focus {
-    background-color: #e8e1fe !important;
-  }
-  &:disabled {
-    background-color: rgba(0, 0, 0, 0.1) !important;
-    color: rgba(0, 0, 0, 0.25) !important;
-  }
-}
-
-.large {
-  height: 52px;
-  padding: 0 27px;
-}
-
-.medium {
-  height: 42px;
-  padding: 11px 20px 11px 21px;
-}
-
-.small {
-  height: 29px;
-  padding: 5px 21px 4px 22px;
-}
-
-.xsmall {
-  height: 26px;
-  padding: 3px 13px 3px 14px;
 }

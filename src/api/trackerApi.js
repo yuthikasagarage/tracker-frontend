@@ -13,10 +13,11 @@ export const createRecord = createAsyncThunk(
             });
          
             const mutation = gql`
-            mutation {
-                createRecord($recordInput: {$weight : Integer! , $recorded_date: String!})
+            mutation  ( $weight: Float!, $recorded_date: String!){
+                createRecord(recordInput: {weight :$weight , recorded_date: $recorded_date})
             }           
             `
+              
             const variables = {
                 weight: payload.weight ,
                 recorded_date: payload.recorded_date,

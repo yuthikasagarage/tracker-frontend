@@ -14,7 +14,7 @@ export const trackerSlice = createSlice({
   initialState,
   extraReducers: (builder) => {    
     builder.addCase(getUserRecords.fulfilled, (state, action) => {
-        state.records.push(action.payload);
+        state.records = action.payload;
     })
     builder.addCase(createRecord.fulfilled, (state, action) => {
         state.lastCreate = action.payload

@@ -1,15 +1,15 @@
+@import "../colors";
 
 @mixin input(
   $borderWeight: 2px,
   $borderStyle: solid,
   // $borderColor: $input-border-color
-  $borderColor: #c7c8c9
+  $borderColor: #c7c8c9,
+  $borderRadius: 5px,
 ) {
-  border: $borderWeight $borderStyle $borderColor;
-  height: 52px;
-  border-radius: 5px;
-  padding-left: 10px;
-  width: 95% !important;
+  border: $borderWeight $borderStyle $borderColor ;
+  height: 42px;
+  border-radius: $borderRadius !important;
   @content;
   &:hover {
     border: solid 2px #5d38db !important;

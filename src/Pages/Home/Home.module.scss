@@ -1,0 +1,18 @@
+
+@import "../../theme/colors";
+
+.contentWrapper{
+    height: calc(100vh - 70px);
+    width: 100%;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;   
+
+}
+
+.controlsWrapper{
+    display: flex;
+    flex-direction: row;
+    margin: 5px 30px;
+   
+}

@@ -1,0 +1,22 @@
+
+@import '../../../theme/colors';
+
+.header{
+
+  height: 60px;
+  width: 100%;
+  background-color: $purple ;
+  display: flex;
+  flex-direction: row-reverse;
+  position: sticky;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  padding: 5px 0px;
+  
+  &__childWrapper {
+    margin-right: 10em;
+  }
+
+  
+}

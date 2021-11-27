@@ -3,17 +3,18 @@ import { Button } from "antd";
 import React from "react";
 
 
-export default function DefaultButton({
-  children,
-  className,
-  onClick,
-  variant = "primary",
-  size = "large",
-  ...props
-}){
+export default function DefaultButton(props) {
+  
+  const { children,
+    className,
+    onClick,
+    variant = "primary",
+    size = "large",
+    ...rest } = props;
+
   return (
     <Button
-      {...props}
+      {...rest}
       className={`${classNames.button} ${classNames[variant]} ${classNames[size]} ${className} `}
       onClick={onClick}
     >
