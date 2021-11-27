@@ -1,0 +1,27 @@
+@import "../colors";
+
+@mixin authWrapper() {
+  background: $background-color;
+  min-height: 100vh;
+  padding-top: 40px;
+  // min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  > form {
+    width: 400px;
+    background: #fff;
+    padding: 45px 60px;
+    border-radius: 14px;
+    z-index: 1;
+    box-shadow: -10px 9px 21px 0 rgba(128, 152, 213, 0.08);
+    label {
+      font-weight: 900;
+      margin: 10px 10px 10px 10px;
+    }
+    button {
+      background-color: #5d38db;
+    }
+  }
+}

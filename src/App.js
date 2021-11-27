@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import Routes from "./routes";
+import { useSelector , useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react' 
+import { getUser } from './api/authApi';
+import Loader from './components/common/Loader'
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  const dispatch = useDispatch();
+
+
+  const user = useSelector(state => state.auth.user)
+  const UserFetching = useSelector(state => state.auth.fetching)
+
+  useEffect(() => {
+    dispatch(getUser())
+  }, [dispatch, user])
+
+  if (UserFetching) {
+    return < Loader/>
+  }
+    
+  return <Routes signedIn={user}/> 
 }
 
 export default App;

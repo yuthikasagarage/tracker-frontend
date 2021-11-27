@@ -1,0 +1,71 @@
+@import "../../theme/mixins/authWrapper";
+@import "../../theme/mixins/input";
+@import "../../theme/colors";
+
+.wrapper {
+  @include authWrapper;
+  min-height: 100vh;
+  flex-direction: column;
+  > h1 {
+    margin: 20px 0 30px;
+    font-size: 36px;
+  }
+}
+
+.logo {
+  width: 80px;
+  margin-top: 20px;
+}
+
+.email {
+  @include input {
+    width: 100%;
+  }
+}
+
+.sublabel{
+  margin-bottom: 30px;
+}
+
+.input {
+  @include input {
+    width: 100%;
+  }
+}
+
+.mollyLogoText {
+  width: 80px;
+  margin-top: 21px;
+  margin-bottom: 21px;
+}
+
+.usefulLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  > div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 443px;
+    font-weight: bold;
+  }
+}
+
+.btn {
+  width: 100%;
+  border-radius: 5px;
+  font-weight: bold;
+  background: #5d38db;
+  height: 50px;
+  &:focus,
+  &:hover {
+    background-color: $purple;
+    color: $white;
+  }
+}
+
+.formWrapper {
+  align-items: center;
+}

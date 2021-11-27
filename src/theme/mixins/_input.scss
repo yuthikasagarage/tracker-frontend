@@ -1,0 +1,23 @@
+
+@mixin input(
+  $borderWeight: 2px,
+  $borderStyle: solid,
+  // $borderColor: $input-border-color
+  $borderColor: #c7c8c9
+) {
+  border: $borderWeight $borderStyle $borderColor;
+  height: 52px;
+  border-radius: 5px;
+  padding-left: 10px;
+  width: 95% !important;
+  @content;
+  &:hover {
+    border: solid 2px #5d38db !important;
+  }
+  &:active {
+    border: solid 2px #5d38db !important;
+  }
+  &:focus {
+    border: solid 2px #5d38db !important;
+  }
+}

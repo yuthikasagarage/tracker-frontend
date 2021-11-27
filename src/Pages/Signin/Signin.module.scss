@@ -1,0 +1,48 @@
+@import "../../theme/mixins/authWrapper";
+@import "../../theme/mixins/input";
+@import "../../theme/colors";
+
+.wrapper {
+  @include authWrapper;
+  min-height: 100vh;
+  flex-direction: column;
+  > h1 {
+    margin: 20px 0 30px;
+  }
+}
+.sublabel{
+  margin-bottom: 30px;
+}
+
+.logo {
+  height: 80px;
+}
+
+
+.input {
+  @include input {
+    width: 100%;
+  }
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.thankYouAlert {
+  width: 400px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  width: 100%;
+  border-radius: 5px;
+  font-weight: bold;
+  background: #5d38db;
+  height: 50px;
+  &:focus,
+  &:hover {
+    background-color: $purple;
+    color: $white;
+  }
+}
