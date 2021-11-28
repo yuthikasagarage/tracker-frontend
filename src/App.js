@@ -9,7 +9,7 @@ function App() {
 	const dispatch = useDispatch();
 
 	const user = useSelector((state) => state.auth.user);
-	const UserFetching = useSelector((state) => state.auth.fetching);
+	const UserFetching = useSelector((state) => state.auth?.fetching);
 
 	useEffect(() => {
 		dispatch(getUser());

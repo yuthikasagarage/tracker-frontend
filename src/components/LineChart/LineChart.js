@@ -29,7 +29,9 @@ const Line = (props) => {
 			const x = await JSON.parse(records);
 			setRecs(x);
 		}
-		stringify();
+		if (records) {
+			stringify();
+		}
 	}, [records]);
 
 	useEffect(() => {

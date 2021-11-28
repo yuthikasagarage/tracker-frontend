@@ -15,6 +15,11 @@ const initialState = {
 export const authSlice = createSlice({
 	name: "auth/login",
 	initialState,
+	reducers: {
+		clearSignUpStatus: (state) => {
+			state.signUpStatus = null;
+		},
+	},
 	extraReducers: (builder) => {
 		builder.addCase(getUser.fulfilled, (state, action) => {
 			state.user = action.payload;

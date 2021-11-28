@@ -44,7 +44,9 @@ const Home = () => {
 			const x = await JSON.parse(records);
 			setRecordParsed(x);
 		}
-		stringify();
+		if (records) {
+			stringify();
+		}
 
 		async function sort() {
 			await recordParsed?.userRecords?.sort(function (a, b) {
