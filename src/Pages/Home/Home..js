@@ -158,7 +158,7 @@ const Home = () => {
 				>
 					{" "}
 					<h3>
-						Click on the points in the graph to select a measurement to update or delete
+						To select a point, click after cross-hair connects on a point when cursor is near   
 					</h3>
 					<div style={{ fontWeight: "bold", fontSize: "20px" }}>Selected Measurement</div>
 					<div style={{ fontWeight: "bold" }}>
