@@ -203,7 +203,7 @@ const Home = () => {
 						>
 							<Input className={classNames.input} />
 						</Form.Item>
-						showDeleteModal
+			
 						<Form.Item
 							label="Date"
 							name="recorded-date"
