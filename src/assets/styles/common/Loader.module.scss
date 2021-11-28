@@ -97,4 +97,21 @@
       animation: heartbeat 1.5s ease-in-out infinite both;
     }
   }
+
+  .barewrapper {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    img {
+      width: 80px;
+      -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+      animation: heartbeat 1.5s ease-in-out infinite both;
+    }
+  }
   
