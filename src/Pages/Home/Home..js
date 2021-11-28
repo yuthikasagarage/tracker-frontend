@@ -76,7 +76,7 @@ const Home = () => {
 			})
 		);
 		setShowAddWeightModal(false);
-		form.resetFields(["weight", "recorded-date"]);
+
 	};
 
 	const updateWeightRecord = async () => {
@@ -97,7 +97,7 @@ const Home = () => {
 			})
 		);
 		setshowUpdateModal(false);
-		form.resetFields(["weight-update", "updated-date"]);
+
 	};
 
 	const deleteWeightRecord = async () => {
