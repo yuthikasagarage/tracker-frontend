@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import LineChart from "../../components/LineChart/LineChart";
 import classNames from "./Home.module.scss";
-import { Input, Form, DatePicker, Modal } from "antd";
+import { Input, Form, DatePicker, Modal, Alert } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getUserRecords,
@@ -23,6 +23,9 @@ const Home = () => {
   const lastDelete = useSelector((state) => state.tracker.lastDelete);
   const recs = useSelector((state) => state.tracker.records);
   const trackerFetching = useSelector((state) => state.tracker.fetching);
+  const errorMessage = useSelector(state => state.tracker.error);
+
+
 
   const [showAddWeightModal, setShowAddWeightModal] = useState(false);
   const [showUpdateModal, setshowUpdateModal] = useState(false);
@@ -114,7 +117,9 @@ const Home = () => {
           </div>
         </div>
       )}
-
+	    <div style={{ marginBottom: 10, width: 400 }}>
+				{errorMessage && <Alert type="error" message={errorMessage} />}
+			</div>
       <div className={classNames.contentWrapper}>
         <div style={{ height: 500, width: "inherit" }}>
           {records && (

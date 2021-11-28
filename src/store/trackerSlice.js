@@ -27,7 +27,7 @@ export const trackerSlice = createSlice({
 		});
 		builder.addCase(getUserRecords.rejected, (state, action) => {
 			state.fetching = false;
-			state.error = action.error;
+			state.error = action.error.message.substring(0, action.error.message.indexOf(':'));
 		});
 
 		builder.addCase(createRecord.fulfilled, (state, action) => {
@@ -39,7 +39,7 @@ export const trackerSlice = createSlice({
 		});
 		builder.addCase(createRecord.rejected, (state, action) => {
 			state.fetching = false;
-			state.error = action.error;
+			state.error = action.error.message.substring(0, action.error.message.indexOf(':'));
 		});
 
 		builder.addCase(updateRecord.fulfilled, (state, action) => {
@@ -51,7 +51,7 @@ export const trackerSlice = createSlice({
 		});
 		builder.addCase(updateRecord.rejected, (state, action) => {
 			state.fetching = false;
-			state.error = action.error;
+			state.error = action.error.message.substring(0, action.error.message.indexOf(':'));
 		});
 
 		builder.addCase(deleteRecord.fulfilled, (state, action) => {
@@ -63,7 +63,7 @@ export const trackerSlice = createSlice({
 		});
 		builder.addCase(deleteRecord.rejected, (state, action) => {
 			state.fetching = false;
-			state.error = action.error;
+			state.error = action.error.message.substring(0, action.error.message.indexOf(':'));
 		});
 	},
 });
