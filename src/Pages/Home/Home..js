@@ -56,6 +56,7 @@ const Home = () => {
 		sort();
 	}, [records]);
 
+
 	useEffect(() => {
 		const x = recordParsed?.userRecords?.[selectedMeasurement?.index];
 		setSelectedId(x?.id);
@@ -75,6 +76,7 @@ const Home = () => {
 			})
 		);
 		setShowAddWeightModal(false);
+		form.resetFields(["weight", "recorded-date"]);
 	};
 
 	const updateWeightRecord = async () => {
@@ -83,15 +85,19 @@ const Home = () => {
 		} catch (error) {
 			return;
 		}
-		const date = form.getFieldValue("recorded-date").toISOString();
+
+		const date = form.getFieldValue("updated-date").toISOString();
+
+		console.log(date, +form.getFieldValue("weight-update"), selectedId)
 		dispatch(
 			updateRecord({
-				weight: parseFloat(+form.getFieldValue("weight")),
+				weight: parseFloat(+form.getFieldValue("weight-update")),
 				recorded_date: date,
 				id: selectedId,
 			})
 		);
 		setshowUpdateModal(false);
+		form.resetFields(["weight-update", "updated-date"]);
 	};
 
 	const deleteWeightRecord = async () => {
@@ -171,7 +177,7 @@ const Home = () => {
 				onCancel={() => {
 					setShowAddWeightModal(false);
 
-					form.resetFields(["weight", "Date"]);
+					form.resetFields(["weight", "recorded-date"]);
 				}}
 				style={{ maxHeight: "90vh" }}
 				width={500}
@@ -226,7 +232,7 @@ const Home = () => {
 				onCancel={() => {
 					setshowUpdateModal(false);
 
-					form.resetFields(["weight", "Date"]);
+					form.resetFields(["weight-update", "updated-date"]);
 				}}
 				style={{ maxHeight: "90vh" }}
 				width={500}
@@ -242,7 +248,7 @@ const Home = () => {
 					<>
 						<Form.Item
 							label="Add your weight"
-							name="weight"
+							name="weight-update"
 							rules={[
 								{
 									required: true,
@@ -254,7 +260,7 @@ const Home = () => {
 						</Form.Item>
 						<Form.Item
 							label="Date"
-							name="recorded-date"
+							name="updated-date"
 							rules={[
 								{
 									required: true,
