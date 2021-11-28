@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import classNames from "./Signin.module.scss";
-import { Form, Spin, Alert, message, Input } from "antd";
-import { Link, useHistory, useLocation } from "react-router-dom";
+import { Form, Alert, Input } from "antd";
+import { Link, useHistory } from "react-router-dom";
 import { validation } from "./config";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
@@ -13,13 +13,16 @@ import { authActions } from "../../store/AuthSlice";
 function Signin(props) {
 	const [form] = Form.useForm();
 	const dispatch = useDispatch();
-	const [errorMessage, setErrorMessage] = useState();
 
+	
 	const [disable, setDisable] = useState(false);
 	const history = useHistory();
 	const fetching = useSelector((state) => state.auth.fetching);
+
 	const user = useSelector((state) => state.auth.user);
 	const signUpStatus = useSelector((state) => state.auth.signUpStatus);
+	const errorMessage = useSelector(state => state.auth.error);
+
 
 	useEffect(() => {
 		if (signUpStatus) {
@@ -37,8 +40,7 @@ function Signin(props) {
 		console.log("Failed:", errorInfo);
 	};
 
-	function onFinish({ email, password }) {
-		console.log("asa");
+	function onFinish({ email, password }) {	
 		dispatch(loginUserCognito({ email, password }));
 	}
 
@@ -103,7 +105,7 @@ function Signin(props) {
 					type="primary"
 					style={{ width: "100%", fontWeight: "bold", zIndex: 1000000 }}
 					loading={fetching}
-					disabled={false}
+					disabled={disable}
 				>
 					Log In
 				</PrimaryButton>

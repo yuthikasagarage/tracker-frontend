@@ -31,7 +31,7 @@ export const authSlice = createSlice({
 		});
 		builder.addCase(getUser.rejected, (state, action) => {
 			state.fetching = false;
-			state.error = action.error;
+			state.error = '';
 		});
 
 		builder.addCase(loginUserCognito.fulfilled, (state, action) => {
@@ -42,9 +42,9 @@ export const authSlice = createSlice({
 		builder.addCase(loginUserCognito.pending, (state, action) => {
 			state.fetching = true;
 		});
-		builder.addCase(loginUserCognito.rejected, (state, action) => {
+		builder.addCase(loginUserCognito.rejected, (state, action) => {	
 			state.fetching = false;
-			state.error = action.error;
+			state.error = action.error.message.substring(0, action.error.message.indexOf(':'));
 		});
 
 		builder.addCase(SignOutUserCognito.fulfilled, (state, action) => {
@@ -56,7 +56,7 @@ export const authSlice = createSlice({
 		});
 		builder.addCase(SignOutUserCognito.rejected, (state, action) => {
 			state.fetching = false;
-			state.error = action.error;
+			state.error =  action.error.message.substring(0, action.error.message.indexOf(':'));
 		});
 
 		builder.addCase(SignUpUserCognito.fulfilled, (state, action) => {
@@ -68,7 +68,7 @@ export const authSlice = createSlice({
 		});
 		builder.addCase(SignUpUserCognito.rejected, (state, action) => {
 			state.fetching = false;
-			state.error = action.error;
+			state.error =  action.error.message.substring(0, action.error.message.indexOf(':'));
 		});
 	},
 });

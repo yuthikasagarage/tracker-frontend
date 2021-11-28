@@ -1,6 +1,6 @@
 import Routes from "./routes";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { getUser } from "./api/authApi";
 import Loader from "./components/common/Loader";
 import "antd/dist/antd.css";

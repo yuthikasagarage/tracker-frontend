@@ -1,6 +1,6 @@
 import classNames from "./Signup.module.scss";
-import { Form, Alert, Input } from "antd";
-import { Link, useHistory, useLocation } from "react-router-dom";
+import { Form, Input , Alert } from "antd";
+import { Link, useHistory } from "react-router-dom";
 import { validation } from "./config";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
@@ -24,6 +24,8 @@ export default function Signup() {
 	}, [history, user]);
 
 	const [disable, setDisable] = useState(true);
+	const errorMessage = useSelector(state => state.auth.error);
+
 
 	function handleSubmit({ email, password, user_name }) {
 		dispatch(SignUpUserCognito({ email, password, user_name }));
@@ -39,6 +41,9 @@ export default function Signup() {
 			{!signUpStatus && (
 				<>
 					<h1>Sign up</h1>
+					<div style={{ marginBottom: 10, width: 400 }}>
+				{errorMessage && <Alert type="error" message={errorMessage} />}
+			</div>
 					<Form
 						onFinish={handleSubmit}
 						form={form}

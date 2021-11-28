@@ -9,7 +9,9 @@ export default function ProtectedRoute(props) {
       {...rest}
       render={function ({ location, ...rest }) {
         return signedIn ? (
-          React.cloneElement(children, rest)
+            
+            {...children}
+            
         ) : (
           <Redirect
             to={{
