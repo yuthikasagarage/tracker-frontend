@@ -1,6 +1,6 @@
 
 
-# React Frontend Weight Tracker for Lenus Interview
+# React Frontend Weight Tracker 
 
 ## Tech stack --> React, graphql, scss, ANTD, redux-toolkit, graphql-request, d3js, nivo
 
